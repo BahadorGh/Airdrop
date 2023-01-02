@@ -38,7 +38,7 @@ contract Airdrop is ReentrancyGuard, Context, Ownable {
     }
 
 
-    /// @dev Withdraw collected funds(based on native coin of network)
+    /// @dev Withdraw collected funds(based on native coin of network), if exist any ofcourse!
     function withdraw() external onlyOwner {
         require(address(this).balance > 0, "Sry, contract has no money yet");
         address payable wallet = payable(msg.sender);
